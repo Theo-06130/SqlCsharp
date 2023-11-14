@@ -77,7 +77,6 @@ C:\Users\theoc\OneDrive - Ynov\Documents\GitHub\SqlCsharp\CsharpSQL\bin\Debug\Sy
 C:\Users\theoc\OneDrive - Ynov\Documents\GitHub\SqlCsharp\CsharpSQL\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\theoc\OneDrive - Ynov\Documents\GitHub\SqlCsharp\CsharpSQL\obj\Debug\CsharpSQL.csproj.AssemblyReference.cache
 C:\Users\theoc\OneDrive - Ynov\Documents\GitHub\SqlCsharp\CsharpSQL\obj\Debug\CsharpSQL.Form1.resources
-C:\Users\theoc\OneDrive - Ynov\Documents\GitHub\SqlCsharp\CsharpSQL\obj\Debug\CsharpSQL.FormTest.resources
 C:\Users\theoc\OneDrive - Ynov\Documents\GitHub\SqlCsharp\CsharpSQL\obj\Debug\CsharpSQL.Properties.Resources.resources
 C:\Users\theoc\OneDrive - Ynov\Documents\GitHub\SqlCsharp\CsharpSQL\obj\Debug\CsharpSQL.csproj.GenerateResource.cache
 C:\Users\theoc\OneDrive - Ynov\Documents\GitHub\SqlCsharp\CsharpSQL\obj\Debug\CsharpSQL.csproj.CoreCompileInputs.cache

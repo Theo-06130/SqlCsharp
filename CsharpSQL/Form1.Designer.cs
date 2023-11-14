@@ -31,39 +31,32 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.genresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.livresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.auteurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.typesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rechargerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.homeToolStripMenuItem, this.genresToolStripMenuItem, this.livresToolStripMenuItem, this.auteurToolStripMenuItem, this.typesToolStripMenuItem, this.rechargerToolStripMenuItem });
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.homeToolStripMenuItem, this.genresToolStripMenuItem, this.auteurToolStripMenuItem, this.typesToolStripMenuItem, this.rechargerToolStripMenuItem });
+            this.menuStrip1.Location = new System.Drawing.Point(15, 0);
+            this.menuStrip1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 15);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(770, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // homeToolStripMenuItem
             // 
-            this.homeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.toolStripMenuItem1 });
             this.homeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
             this.homeToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
             this.homeToolStripMenuItem.Text = "Home";
             this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(211, 24);
-            this.toolStripMenuItem1.Text = "toolStripMenuItem1";
             // 
             // genresToolStripMenuItem
             // 
@@ -71,13 +64,7 @@
             this.genresToolStripMenuItem.Name = "genresToolStripMenuItem";
             this.genresToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
             this.genresToolStripMenuItem.Text = "Genres";
-            // 
-            // livresToolStripMenuItem
-            // 
-            this.livresToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.livresToolStripMenuItem.Name = "livresToolStripMenuItem";
-            this.livresToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
-            this.livresToolStripMenuItem.Text = "Livres";
+            this.genresToolStripMenuItem.Click += new System.EventHandler(this.genresToolStripMenuItem_Click);
             // 
             // auteurToolStripMenuItem
             // 
@@ -85,6 +72,7 @@
             this.auteurToolStripMenuItem.Name = "auteurToolStripMenuItem";
             this.auteurToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.auteurToolStripMenuItem.Text = "Auteur";
+            this.auteurToolStripMenuItem.Click += new System.EventHandler(this.auteurToolStripMenuItem_Click);
             // 
             // typesToolStripMenuItem
             // 
@@ -92,14 +80,27 @@
             this.typesToolStripMenuItem.Name = "typesToolStripMenuItem";
             this.typesToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
             this.typesToolStripMenuItem.Text = "Types";
+            this.typesToolStripMenuItem.Click += new System.EventHandler(this.typesToolStripMenuItem_Click);
             // 
             // rechargerToolStripMenuItem
             // 
             this.rechargerToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.rechargerToolStripMenuItem.Name = "rechargerToolStripMenuItem";
-            this.rechargerToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
-            this.rechargerToolStripMenuItem.Text = "Recharger";
+            this.rechargerToolStripMenuItem.Size = new System.Drawing.Size(165, 24);
+            this.rechargerToolStripMenuItem.Text = "Check Connexion bdd";
             this.rechargerToolStripMenuItem.Click += new System.EventHandler(this.rechargerToolStripMenuItem_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(15, 28);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(15);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.ScrollAlwaysVisible = true;
+            this.listBox1.Size = new System.Drawing.Size(770, 407);
+            this.listBox1.TabIndex = 1;
             // 
             // Form1
             // 
@@ -108,9 +109,11 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
+            this.Padding = new System.Windows.Forms.Padding(15, 0, 15, 15);
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -118,12 +121,12 @@
             this.PerformLayout();
         }
 
+        private System.Windows.Forms.ListBox listBox1;
+
         private System.Windows.Forms.ToolStripMenuItem typesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rechargerToolStripMenuItem;
 
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem genresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem livresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem auteurToolStripMenuItem;
 
         private System.Windows.Forms.MenuStrip menuStrip1;
