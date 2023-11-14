@@ -37,6 +37,7 @@
             this.auteurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.typesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rechargerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,6 +72,7 @@
             this.genresToolStripMenuItem.Name = "genresToolStripMenuItem";
             this.genresToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
             this.genresToolStripMenuItem.Text = "Genres";
+            this.genresToolStripMenuItem.Click += new System.EventHandler(this.genresToolStripMenuItem_Click);
             // 
             // livresToolStripMenuItem
             // 
@@ -101,6 +103,15 @@
             this.rechargerToolStripMenuItem.Text = "Recharger";
             this.rechargerToolStripMenuItem.Click += new System.EventHandler(this.rechargerToolStripMenuItem_Click);
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(30, 58);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(742, 308);
+            this.listBox1.TabIndex = 1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -108,6 +119,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -117,6 +129,8 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.ListBox listBox1;
 
         private System.Windows.Forms.ToolStripMenuItem typesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rechargerToolStripMenuItem;
