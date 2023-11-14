@@ -91,7 +91,7 @@ namespace CsharpSQL
                     MessageBox.Show("Échec de la récupération des données");
                 }
             }
-            throw new System.NotImplementedException();
+            
         }
 
         private void livresToolStripMenuItem_Click(object sender, EventArgs e)
@@ -134,7 +134,7 @@ namespace CsharpSQL
                     MessageBox.Show("Échec de la récupération des données");
                 }
             }
-            throw new System.NotImplementedException();
+            
         }
 
         private void auteurToolStripMenuItem_Click(object sender, EventArgs e)
@@ -177,7 +177,7 @@ namespace CsharpSQL
                     MessageBox.Show("Échec de la récupération des données");
                 }
             }
-            throw new System.NotImplementedException();
+            
         }
 
         private void typesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -220,7 +220,7 @@ namespace CsharpSQL
                     MessageBox.Show("Échec de la récupération des données");
                 }
             }
-            throw new System.NotImplementedException();
+            
         }
     }
     }
