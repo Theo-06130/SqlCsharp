@@ -22,7 +22,7 @@ namespace CsharpSQL
         private string connectionString =
             "Server=176.31.132.185;User ID=biblivres;Password=ig%B-7K2*59WzOc_;Database=biblivres";
 
-        private void TrouverInfoDansBDD(string query, string info1, string info2, string info3)
+        /*private void TrouverInfoDansBDD(string query, string info1, string info2, string info3)
         {
 
             // Créez une connexion avec la chaîne de connexion
@@ -86,7 +86,110 @@ namespace CsharpSQL
                     }
                 }
             }
+        }*/
+
+        private void info_Card_BDD()
+        {
+            // Créez une connexion avec la chaîne de connexion
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                // Ouvrez la connexion
+                connection.Open();
+                using (MySqlCommand command = new MySqlCommand("SELECT COUNT(Id_Livre) FROM Livres", connection))
+                {
+                    // Exécutez la commande et obtenez le résultat (nombre d'éléments)
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+
+                    // Affichez le nombre d'éléments dans le contrôle Name_book
+                    Name_book.Text = count.ToString();
+                    
+                    // Définissez la position initiale des GroupBox
+                    int initialX = 10;
+                    int initialY = 50;
+                    int groupBoxWidth = 150;
+                    int groupBoxHeight = 300;
+                    
+                    
+                    // Variables de position actuelle
+                    int currentX = initialX;
+                    int currentY = initialY;
+                    for (int i = 0; i < count; i++)
+                    {
+                        GroupBox groupBox = CreerGroupBoxPourLivre(i + 1); // Utilisez i + 1 pour obtenir des numéros de groupe uniques
+                        // Changez la couleur de fond du GroupBox
+                        groupBox.BackColor = (i % 2 == 0) ? Color.LightBlue : Color.LightGray;
+                        // Définissez la position du GroupBox
+                        groupBox.Location = new Point(currentX, currentY);
+
+                        // Ajoutez le GroupBox à votre formulaire ou à un autre conteneur
+                        this.Controls.Add(groupBox);
+
+                        // Mettez à jour la position actuelle
+                        currentX += groupBoxWidth*2;
+                        
+                        //Mettre à jour la taille des éléments
+                        groupBox.Width = groupBoxWidth;
+                        groupBox.Height = groupBoxHeight;
+
+                        // Vérifiez si le GroupBox sort de la fenêtre
+                        if (currentX + groupBoxWidth > this.Width)
+                        {
+                            // Réinitialisez la position X et passez à la ligne suivante
+                            currentX = initialX;
+                            currentY += groupBoxHeight + (groupBoxHeight/2);
+                        }
+                    }
+                }
+            }
         }
+        
+        private GroupBox CreerGroupBoxPourLivre(int numero)
+        {
+            // Créez un GroupBox pour chaque livre
+            GroupBox groupBox = new GroupBox();
+            groupBox.Text = $"ID Livre n°{numero}"; // Utilisez la propriété du livre que vous souhaitez afficher
+
+            // Ajoutez un Label pour afficher le nom du livre
+            Label label = new Label();
+
+            // Créez une connexion avec la chaîne de connexion
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                // Ouvrez la connexion
+                connection.Open();
+                
+                string query = "SELECT Titre_Livre FROM Livres WHERE Id_Livre = @id";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    // Ajoutez le paramètre Id_Livre
+                    command.Parameters.AddWithValue("@id", numero);
+
+                    // Exécutez la commande et lisez le résultat
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Lisez la valeur du champ Titre_Livre dans la colonne
+                            string titreLivre = reader["Titre_Livre"].ToString();
+                            //string NomAuteur = reader["Intrigue"].ToString();
+                    
+                            // Définissez le texte du Label avec le titre du livre
+                            label.Text = $"Titre : {titreLivre}";
+                            //label.Text = $"Prix : {NomAuteur}";
+                        }
+                    }
+                }
+            }
+
+            label.Location = new Point(5, 20); // Ajustez la position du Label à l'intérieur du GroupBox
+            label.Height = 40;
+            groupBox.Controls.Add(label);
+
+            // Ajoutez d'autres contrôles à l'intérieur du GroupBox si nécessaire
+
+            return groupBox;
+        }
+
 
         public Form1()
         {
@@ -118,7 +221,8 @@ namespace CsharpSQL
 
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Groupe_livre.Visible = false;
+            info_Card_BDD();
         }
 
         private void genresToolStripMenuItem_Click(object sender, EventArgs e)
@@ -128,7 +232,7 @@ namespace CsharpSQL
             {
                 try
                 {
-                    TrouverInfoDansBDD("SELECT * FROM Genre", "Titre_Genre", "Description_Genre", "Restriction_Age");
+                   // TrouverInfoDansBDD("SELECT * FROM Genre", "Titre_Genre", "Description_Genre", "Restriction_Age");
                     //   MessageBox.Show("Données récupérées et affichées avec succès");
                 }
                 catch (MySqlException ex)
@@ -147,7 +251,7 @@ namespace CsharpSQL
             {
                 try
                 {
-                    TrouverInfoDansBDD("SELECT * FROM Auteur", "Nom", "Nationalite", "Courant");
+                   // TrouverInfoDansBDD("SELECT * FROM Auteur", "Nom", "Nationalite", "Courant");
                 }
                 catch (MySqlException ex)
                 {
@@ -165,7 +269,7 @@ namespace CsharpSQL
             {
                 try
                 {
-                    TrouverInfoDansBDD("SELECT * FROM Types", "Types", "Description_Type", "");
+                   // TrouverInfoDansBDD("SELECT * FROM Types", "Types", "Description_Type", "");
                 }
                 catch (MySqlException ex)
                 {
@@ -183,7 +287,7 @@ namespace CsharpSQL
             {
                 try
                 {
-                    TrouverInfoDansBDD("SELECT * FROM Livres", "Titre_Livre", "Editeur", "prix");
+                  //  TrouverInfoDansBDD("SELECT * FROM Livres", "Titre_Livre", "Editeur", "prix");
                 }
                 catch (MySqlException ex)
                 {
@@ -192,6 +296,7 @@ namespace CsharpSQL
                 }
             }
         }
+        
     }
 }
  

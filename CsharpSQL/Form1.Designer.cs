@@ -36,10 +36,14 @@
             this.livresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.typesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rechargerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.Groupe_livre = new System.Windows.Forms.GroupBox();
+            this.Price = new System.Windows.Forms.Label();
+            this.Name_types = new System.Windows.Forms.Label();
+            this.Name_genre = new System.Windows.Forms.Label();
+            this.Name_author = new System.Windows.Forms.Label();
+            this.Name_book = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
+            this.Groupe_livre.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -101,66 +105,102 @@
             this.rechargerToolStripMenuItem.Text = "Check Connexion bdd";
             this.rechargerToolStripMenuItem.Click += new System.EventHandler(this.rechargerToolStripMenuItem_Click);
             // 
-            // listBox1
+            // Groupe_livre
             // 
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(15, 28);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(15);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(400, 486);
-            this.listBox1.TabIndex = 1;
+            this.Groupe_livre.BackColor = System.Drawing.Color.Transparent;
+            this.Groupe_livre.Controls.Add(this.Price);
+            this.Groupe_livre.Controls.Add(this.Name_types);
+            this.Groupe_livre.Controls.Add(this.Name_genre);
+            this.Groupe_livre.Controls.Add(this.Name_author);
+            this.Groupe_livre.Controls.Add(this.Name_book);
+            this.Groupe_livre.Location = new System.Drawing.Point(38, 46);
+            this.Groupe_livre.Name = "Groupe_livre";
+            this.Groupe_livre.Size = new System.Drawing.Size(180, 278);
+            this.Groupe_livre.TabIndex = 1;
+            this.Groupe_livre.TabStop = false;
             // 
-            // listBox3
+            // Price
             // 
-            this.listBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 16;
-            this.listBox3.Location = new System.Drawing.Point(415, 28);
-            this.listBox3.Margin = new System.Windows.Forms.Padding(15, 3, 3, 3);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(706, 486);
-            this.listBox3.TabIndex = 2;
+            this.Price.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Price.ForeColor = System.Drawing.Color.White;
+            this.Price.Location = new System.Drawing.Point(3, 218);
+            this.Price.Name = "Price";
+            this.Price.Size = new System.Drawing.Size(174, 50);
+            this.Price.TabIndex = 4;
+            this.Price.Text = "label1";
             // 
-            // listBox2
+            // Name_types
             // 
-            this.listBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 16;
-            this.listBox2.Location = new System.Drawing.Point(721, 28);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(400, 486);
-            this.listBox2.TabIndex = 3;
+            this.Name_types.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Name_types.ForeColor = System.Drawing.Color.White;
+            this.Name_types.Location = new System.Drawing.Point(3, 168);
+            this.Name_types.Name = "Name_types";
+            this.Name_types.Size = new System.Drawing.Size(174, 50);
+            this.Name_types.TabIndex = 3;
+            this.Name_types.Text = "label1";
+            // 
+            // Name_genre
+            // 
+            this.Name_genre.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Name_genre.ForeColor = System.Drawing.Color.White;
+            this.Name_genre.Location = new System.Drawing.Point(3, 118);
+            this.Name_genre.Name = "Name_genre";
+            this.Name_genre.Size = new System.Drawing.Size(174, 50);
+            this.Name_genre.TabIndex = 2;
+            this.Name_genre.Text = "label1";
+            // 
+            // Name_author
+            // 
+            this.Name_author.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Name_author.ForeColor = System.Drawing.Color.White;
+            this.Name_author.Location = new System.Drawing.Point(3, 68);
+            this.Name_author.Name = "Name_author";
+            this.Name_author.Size = new System.Drawing.Size(174, 50);
+            this.Name_author.TabIndex = 1;
+            this.Name_author.Text = "label1";
+            // 
+            // Name_book
+            // 
+            this.Name_book.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Name_book.ForeColor = System.Drawing.Color.White;
+            this.Name_book.Location = new System.Drawing.Point(3, 18);
+            this.Name_book.Name = "Name_book";
+            this.Name_book.Size = new System.Drawing.Size(174, 50);
+            this.Name_book.TabIndex = 0;
+            this.Name_book.Text = "label1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.AutoScroll = true;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(5)))), ((int)(((byte)(26)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1136, 529);
-            this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listBox3);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.Groupe_livre);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Padding = new System.Windows.Forms.Padding(15, 0, 15, 15);
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.Groupe_livre.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
         }
 
+        private System.Windows.Forms.Label Name_book;
+        private System.Windows.Forms.Label Name_author;
+        private System.Windows.Forms.Label Name_genre;
+        private System.Windows.Forms.Label Name_types;
+        private System.Windows.Forms.Label Price;
+
+        private System.Windows.Forms.GroupBox Groupe_livre;
+
         private System.Windows.Forms.ToolStripMenuItem livresToolStripMenuItem;
-
-        private System.Windows.Forms.ListBox listBox2;
-
-        private System.Windows.Forms.ListBox listBox3;
-
-        private System.Windows.Forms.ListBox listBox1;
 
         private System.Windows.Forms.ToolStripMenuItem typesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rechargerToolStripMenuItem;
