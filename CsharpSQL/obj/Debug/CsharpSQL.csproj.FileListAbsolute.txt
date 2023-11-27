@@ -83,3 +83,4 @@ C:\Users\theoc\OneDrive - Ynov\Documents\GitHub\SqlCsharp\CsharpSQL\obj\Debug\Cs
 C:\Users\theoc\OneDrive - Ynov\Documents\GitHub\SqlCsharp\CsharpSQL\obj\Debug\CsharpSQL.csproj.CopyComplete
 C:\Users\theoc\OneDrive - Ynov\Documents\GitHub\SqlCsharp\CsharpSQL\obj\Debug\CsharpSQL.exe
 C:\Users\theoc\OneDrive - Ynov\Documents\GitHub\SqlCsharp\CsharpSQL\obj\Debug\CsharpSQL.pdb
+C:\Users\theoc\OneDrive - Ynov\Documents\GitHub\SqlCsharp\CsharpSQL\obj\Debug\CsharpSQL.csproj.SuggestedBindingRedirects.cache

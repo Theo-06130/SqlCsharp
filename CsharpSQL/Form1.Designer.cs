@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.miniToolStrip = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.genresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,7 +73,6 @@
             this.genresToolStripMenuItem.Name = "genresToolStripMenuItem";
             this.genresToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
             this.genresToolStripMenuItem.Text = "Genres";
-            this.genresToolStripMenuItem.Click += new System.EventHandler(this.genresToolStripMenuItem_Click);
             // 
             // auteurToolStripMenuItem
             // 
@@ -82,7 +80,6 @@
             this.auteurToolStripMenuItem.Name = "auteurToolStripMenuItem";
             this.auteurToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.auteurToolStripMenuItem.Text = "Auteur";
-            this.auteurToolStripMenuItem.Click += new System.EventHandler(this.auteurToolStripMenuItem_Click);
             // 
             // livresToolStripMenuItem
             // 
@@ -90,7 +87,6 @@
             this.livresToolStripMenuItem.Name = "livresToolStripMenuItem";
             this.livresToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
             this.livresToolStripMenuItem.Text = "Livres";
-            this.livresToolStripMenuItem.Click += new System.EventHandler(this.livresToolStripMenuItem_Click_1);
             // 
             // typesToolStripMenuItem
             // 
@@ -98,7 +94,6 @@
             this.typesToolStripMenuItem.Name = "typesToolStripMenuItem";
             this.typesToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
             this.typesToolStripMenuItem.Text = "Types";
-            this.typesToolStripMenuItem.Click += new System.EventHandler(this.typesToolStripMenuItem_Click);
             // 
             // rechargerToolStripMenuItem
             // 
@@ -129,24 +124,28 @@
             this.livresToolStripMenuItem1.Name = "livresToolStripMenuItem1";
             this.livresToolStripMenuItem1.Size = new System.Drawing.Size(58, 24);
             this.livresToolStripMenuItem1.Text = "Livres";
+            this.livresToolStripMenuItem1.Click += new System.EventHandler(this.livresToolStripMenuItem1_Click);
             // 
             // genresToolStripMenuItem1
             // 
             this.genresToolStripMenuItem1.Name = "genresToolStripMenuItem1";
             this.genresToolStripMenuItem1.Size = new System.Drawing.Size(66, 24);
             this.genresToolStripMenuItem1.Text = "Genres";
+            this.genresToolStripMenuItem1.Click += new System.EventHandler(this.genresToolStripMenuItem1_Click);
             // 
             // auteurToolStripMenuItem1
             // 
             this.auteurToolStripMenuItem1.Name = "auteurToolStripMenuItem1";
             this.auteurToolStripMenuItem1.Size = new System.Drawing.Size(65, 24);
             this.auteurToolStripMenuItem1.Text = "Auteur";
+            this.auteurToolStripMenuItem1.Click += new System.EventHandler(this.auteurToolStripMenuItem1_Click);
             // 
             // typesToolStripMenuItem1
             // 
             this.typesToolStripMenuItem1.Name = "typesToolStripMenuItem1";
             this.typesToolStripMenuItem1.Size = new System.Drawing.Size(58, 24);
             this.typesToolStripMenuItem1.Text = "Types";
+            this.typesToolStripMenuItem1.Click += new System.EventHandler(this.typesToolStripMenuItem1_Click);
             // 
             // testConnexionBDDToolStripMenuItem
             // 
@@ -159,6 +158,7 @@
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(15, 28);
             this.label1.Name = "label1";
@@ -173,7 +173,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(5)))), ((int)(((byte)(26)))));
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1136, 529);
             this.Controls.Add(this.label1);

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3b1a3235-4ce2-47e4-a0a3-ac3359390118" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/CsharpSQL/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CsharpSQL/Form1.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CsharpSQL/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CsharpSQL/Form1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CsharpSQL/bin/Debug/CsharpSQL.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CsharpSQL/bin/Debug/CsharpSQL.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CsharpSQL/bin/Debug/CsharpSQL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CsharpSQL/bin/Debug/CsharpSQL.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CsharpSQL/obj/Debug/CsharpSQL.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CsharpSQL/obj/Debug/CsharpSQL.csproj.GenerateResource.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CsharpSQL/obj/Debug/CsharpSQL.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CsharpSQL/obj/Debug/CsharpSQL.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CsharpSQL/obj/Debug/CsharpSQL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CsharpSQL/obj/Debug/CsharpSQL.pdb" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="2YlMTtsecn90tAWFUvmuM9xz35k" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3b1a3235-4ce2-47e4-a0a3-ac3359390118" name="Changes" comment="" />
+      <created>1701095725230</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1701095725230</updated>
+      <workItem from="1701095728645" duration="3000" />
+    </task>
+    <servers />
+  </component>
+</project>
