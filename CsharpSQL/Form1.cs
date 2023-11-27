@@ -49,11 +49,11 @@ namespace CsharpSQL
                         listBox1.Items.Add(" ");
                         listBox2.Items.Add(" ");
                         listBox3.Items.Add(" ");
-                        
+
                         // Parcourez les résultats et ajoutez-les au ListBox
                         while (reader.Read())
                         {
-                            
+
                             // Ajoutez la valeur de la colonne spécifiée à la liste
                             if (info1 == "")
                             {
@@ -61,7 +61,7 @@ namespace CsharpSQL
                             }
                             else
                             {
-                                listBox1.Items.Add(reader[info1].ToString()); 
+                                listBox1.Items.Add(reader[info1].ToString());
                             }
                             if (info2 == "")
                             {
@@ -69,7 +69,7 @@ namespace CsharpSQL
                             }
                             else
                             {
-                                listBox2.Items.Add(reader[info2].ToString()); 
+                                listBox2.Items.Add(reader[info2].ToString());
                             }
                             if (info3 == "")
                             {
@@ -77,10 +77,10 @@ namespace CsharpSQL
                             }
                             else
                             {
-                                listBox3.Items.Add(reader[info3].ToString()); 
+                                listBox3.Items.Add(reader[info3].ToString());
                             }
-                            
-                            
+
+
                         }
 
                     }
@@ -99,9 +99,7 @@ namespace CsharpSQL
                 {
                     // Exécutez la commande et obtenez le résultat (nombre d'éléments)
                     int count = Convert.ToInt32(command.ExecuteScalar());
-
-                    // Affichez le nombre d'éléments dans le contrôle Name_book
-                    Name_book.Text = count.ToString();
+                    
                     
                     // Définissez la position initiale des GroupBox
                     int initialX = 10;
@@ -147,18 +145,28 @@ namespace CsharpSQL
         {
             // Créez un GroupBox pour chaque livre
             GroupBox groupBox = new GroupBox();
-            groupBox.Text = $"ID Livre n°{numero}"; // Utilisez la propriété du livre que vous souhaitez afficher
+            
+            // Ajoutez des Labels pour afficher le nom du livre et le nom de l'auteur
+            Label labelPages = new Label();
+            Label labelLangues = new Label();
+            Label labelTitre = new Label();
+            Label labelAuteur = new Label();
+            Label labelEditeur = new Label();
+            Label labelPrix = new Label();
 
-            // Ajoutez un Label pour afficher le nom du livre
-            Label label = new Label();
 
             // Créez une connexion avec la chaîne de connexion
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 // Ouvrez la connexion
                 connection.Open();
-                
-                string query = "SELECT Titre_Livre FROM Livres WHERE Id_Livre = @id";
+
+                // Créez une commande SQL pour récupérer le titre du livre et le nom de l'auteur
+                string query = "SELECT * " +
+                               "FROM Livres " +
+                               "JOIN Auteur ON Livres.Id_Auteur = Auteur.Id_Auteur " +
+                               "JOIN Langue ON Livres.Id_Langue = Langue.Id_Langue " +
+                               "WHERE Livres.Id_Livre = @id";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     // Ajoutez le paramètre Id_Livre
@@ -169,21 +177,42 @@ namespace CsharpSQL
                     {
                         if (reader.Read())
                         {
-                            // Lisez la valeur du champ Titre_Livre dans la colonne
+                            // Lisez les valeurs des champs Titre_Livre et Nom_Auteur
+                            string pages = reader["Nb_Pages"].ToString();
+                            string Langue = reader["Acronyme"].ToString();
                             string titreLivre = reader["Titre_Livre"].ToString();
-                            //string NomAuteur = reader["Intrigue"].ToString();
+                            string nomAuteur = reader["Nom"].ToString();
+                            string editeur = reader["Editeur"].ToString();
+                            string Prix = reader["Prix"].ToString();
+
                     
-                            // Définissez le texte du Label avec le titre du livre
-                            label.Text = $"Titre : {titreLivre}";
-                            //label.Text = $"Prix : {NomAuteur}";
+                            // Définissez le texte des Labels avec les informations récupérées
+                            labelPages.Text = $"{pages} Pages";
+                            labelLangues.Text = $"{Langue}";
+                            labelTitre.Text = $"Titre : {titreLivre}";
+                            labelAuteur.Text = $"Écrit par {nomAuteur}";
+                            labelEditeur.Text = $"Édité par {editeur}";
+                            labelPrix.Text = $"Vendu à {Prix}€";
+
+
                         }
                     }
                 }
             }
 
-            label.Location = new Point(5, 20); // Ajustez la position du Label à l'intérieur du GroupBox
-            label.Height = 40;
-            groupBox.Controls.Add(label);
+            labelLangues.Location = new Point(120, 20);
+            labelPages.Location = new Point(2, 20);
+            labelTitre.Location = new Point(10, 45); // Ajustez la position du Label à l'intérieur du GroupBox
+            labelAuteur.Location = new Point(10, 70); // Ajustez la position du deuxième Label
+            labelEditeur.Location = new Point(10, 95);//Ajustez la position du troisièmme Label
+            labelPrix.Location = new Point(10, 120);
+
+            groupBox.Controls.Add(labelLangues);
+            groupBox.Controls.Add(labelPages);
+            groupBox.Controls.Add(labelTitre);
+            groupBox.Controls.Add(labelAuteur);
+            groupBox.Controls.Add(labelEditeur);
+            groupBox.Controls.Add(labelPrix);
 
             // Ajoutez d'autres contrôles à l'intérieur du GroupBox si nécessaire
 
@@ -191,13 +220,91 @@ namespace CsharpSQL
         }
 
 
+
         public Form1()
         {
             InitializeComponent();
         }
+        
 
+        private void genresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Créez une instance de MySqlConnection en utilisant la chaîne de connexion
 
-        private void rechargerToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+                try
+                {
+                    // TrouverInfoDansBDD("SELECT * FROM Genre", "Titre_Genre", "Description_Genre", "Restriction_Age");
+                    //   MessageBox.Show("Données récupérées et affichées avec succès");
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show($"Erreur : {ex.Message}");
+                    MessageBox.Show("Échec de la récupération des données");
+                }
+            }
+
+        }
+
+        private void auteurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Créez une instance de MySqlConnection en utilisant la chaîne de connexion
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    // TrouverInfoDansBDD("SELECT * FROM Auteur", "Nom", "Nationalite", "Courant");
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show($"Erreur : {ex.Message}");
+                    MessageBox.Show("Échec de la récupération des données");
+                }
+            }
+
+        }
+
+        private void typesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Créez une instance de MySqlConnection en utilisant la chaîne de connexion
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    // TrouverInfoDansBDD("SELECT * FROM Types", "Types", "Description_Type", "");
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show($"Erreur : {ex.Message}");
+                    MessageBox.Show("Échec de la récupération des données");
+                } 
+            }
+
+        }
+
+        private void livresToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            // Créez une instance de MySqlConnection en utilisant la chaîne de connexion
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    //  TrouverInfoDansBDD("SELECT * FROM Livres", "Titre_Livre", "Editeur", "prix");
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show($"Erreur : {ex.Message}");
+                    MessageBox.Show("Échec de la récupération des données");
+                }
+            }
+        }
+
+        private void homeToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            info_Card_BDD();
+        }
+
+        private void testConnexionBDDToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Créez une instance de MySqlConnection en utilisant la chaîne de connexion
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -218,86 +325,5 @@ namespace CsharpSQL
                 }
             }
         }
-
-        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Groupe_livre.Visible = false;
-            info_Card_BDD();
-        }
-
-        private void genresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Créez une instance de MySqlConnection en utilisant la chaîne de connexion
-
-            {
-                try
-                {
-                   // TrouverInfoDansBDD("SELECT * FROM Genre", "Titre_Genre", "Description_Genre", "Restriction_Age");
-                    //   MessageBox.Show("Données récupérées et affichées avec succès");
-                }
-                catch (MySqlException ex)
-                {
-                    MessageBox.Show($"Erreur : {ex.Message}");
-                    MessageBox.Show("Échec de la récupération des données");
-                }
-            }
-
-        }
-
-        private void auteurToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Créez une instance de MySqlConnection en utilisant la chaîne de connexion
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
-            {
-                try
-                {
-                   // TrouverInfoDansBDD("SELECT * FROM Auteur", "Nom", "Nationalite", "Courant");
-                }
-                catch (MySqlException ex)
-                {
-                    MessageBox.Show($"Erreur : {ex.Message}");
-                    MessageBox.Show("Échec de la récupération des données");
-                }
-            }
-
-        }
-
-        private void typesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Créez une instance de MySqlConnection en utilisant la chaîne de connexion
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
-            {
-                try
-                {
-                   // TrouverInfoDansBDD("SELECT * FROM Types", "Types", "Description_Type", "");
-                }
-                catch (MySqlException ex)
-                {
-                    MessageBox.Show($"Erreur : {ex.Message}");
-                    MessageBox.Show("Échec de la récupération des données");
-                }
-            }
-
-        }
-
-        private void livresToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            // Créez une instance de MySqlConnection en utilisant la chaîne de connexion
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
-            {
-                try
-                {
-                  //  TrouverInfoDansBDD("SELECT * FROM Livres", "Titre_Livre", "Editeur", "prix");
-                }
-                catch (MySqlException ex)
-                {
-                    MessageBox.Show($"Erreur : {ex.Message}");
-                    MessageBox.Show("Échec de la récupération des données");
-                }
-            }
-        }
-        
     }
 }
- 
-

@@ -29,33 +29,37 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.miniToolStrip = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.genresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.auteurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.livresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.typesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rechargerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Groupe_livre = new System.Windows.Forms.GroupBox();
-            this.Price = new System.Windows.Forms.Label();
-            this.Name_types = new System.Windows.Forms.Label();
-            this.Name_genre = new System.Windows.Forms.Label();
-            this.Name_author = new System.Windows.Forms.Label();
-            this.Name_book = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.homeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.livresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.genresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.auteurToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.typesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.testConnexionBDDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.miniToolStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.Groupe_livre.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // miniToolStrip
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.homeToolStripMenuItem, this.genresToolStripMenuItem, this.auteurToolStripMenuItem, this.livresToolStripMenuItem, this.typesToolStripMenuItem, this.rechargerToolStripMenuItem });
-            this.menuStrip1.Location = new System.Drawing.Point(15, 0);
-            this.menuStrip1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 15);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1106, 28);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.miniToolStrip.AutoSize = false;
+            this.miniToolStrip.BackColor = System.Drawing.Color.Transparent;
+            this.miniToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.miniToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.homeToolStripMenuItem, this.genresToolStripMenuItem, this.auteurToolStripMenuItem, this.livresToolStripMenuItem, this.typesToolStripMenuItem, this.rechargerToolStripMenuItem });
+            this.miniToolStrip.Location = new System.Drawing.Point(480, 4);
+            this.miniToolStrip.Margin = new System.Windows.Forms.Padding(0, 0, 0, 15);
+            this.miniToolStrip.Name = "miniToolStrip";
+            this.miniToolStrip.Size = new System.Drawing.Size(1106, 28);
+            this.miniToolStrip.TabIndex = 0;
+            this.miniToolStrip.Visible = false;
             // 
             // homeToolStripMenuItem
             // 
@@ -63,7 +67,6 @@
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
             this.homeToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
             this.homeToolStripMenuItem.Text = "Home";
-            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // genresToolStripMenuItem
             // 
@@ -103,71 +106,66 @@
             this.rechargerToolStripMenuItem.Name = "rechargerToolStripMenuItem";
             this.rechargerToolStripMenuItem.Size = new System.Drawing.Size(165, 24);
             this.rechargerToolStripMenuItem.Text = "Check Connexion bdd";
-            this.rechargerToolStripMenuItem.Click += new System.EventHandler(this.rechargerToolStripMenuItem_Click);
             // 
-            // Groupe_livre
+            // menuStrip1
             // 
-            this.Groupe_livre.BackColor = System.Drawing.Color.Transparent;
-            this.Groupe_livre.Controls.Add(this.Price);
-            this.Groupe_livre.Controls.Add(this.Name_types);
-            this.Groupe_livre.Controls.Add(this.Name_genre);
-            this.Groupe_livre.Controls.Add(this.Name_author);
-            this.Groupe_livre.Controls.Add(this.Name_book);
-            this.Groupe_livre.Location = new System.Drawing.Point(38, 46);
-            this.Groupe_livre.Name = "Groupe_livre";
-            this.Groupe_livre.Size = new System.Drawing.Size(180, 278);
-            this.Groupe_livre.TabIndex = 1;
-            this.Groupe_livre.TabStop = false;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.homeToolStripMenuItem1, this.livresToolStripMenuItem1, this.genresToolStripMenuItem1, this.auteurToolStripMenuItem1, this.typesToolStripMenuItem1, this.testConnexionBDDToolStripMenuItem });
+            this.menuStrip1.Location = new System.Drawing.Point(15, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.menuStrip1.Size = new System.Drawing.Size(1106, 28);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // Price
+            // homeToolStripMenuItem1
             // 
-            this.Price.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Price.ForeColor = System.Drawing.Color.White;
-            this.Price.Location = new System.Drawing.Point(3, 218);
-            this.Price.Name = "Price";
-            this.Price.Size = new System.Drawing.Size(174, 50);
-            this.Price.TabIndex = 4;
-            this.Price.Text = "label1";
+            this.homeToolStripMenuItem1.Name = "homeToolStripMenuItem1";
+            this.homeToolStripMenuItem1.Size = new System.Drawing.Size(62, 24);
+            this.homeToolStripMenuItem1.Text = "Home";
+            this.homeToolStripMenuItem1.Click += new System.EventHandler(this.homeToolStripMenuItem1_Click);
             // 
-            // Name_types
+            // livresToolStripMenuItem1
             // 
-            this.Name_types.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Name_types.ForeColor = System.Drawing.Color.White;
-            this.Name_types.Location = new System.Drawing.Point(3, 168);
-            this.Name_types.Name = "Name_types";
-            this.Name_types.Size = new System.Drawing.Size(174, 50);
-            this.Name_types.TabIndex = 3;
-            this.Name_types.Text = "label1";
+            this.livresToolStripMenuItem1.Name = "livresToolStripMenuItem1";
+            this.livresToolStripMenuItem1.Size = new System.Drawing.Size(58, 24);
+            this.livresToolStripMenuItem1.Text = "Livres";
             // 
-            // Name_genre
+            // genresToolStripMenuItem1
             // 
-            this.Name_genre.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Name_genre.ForeColor = System.Drawing.Color.White;
-            this.Name_genre.Location = new System.Drawing.Point(3, 118);
-            this.Name_genre.Name = "Name_genre";
-            this.Name_genre.Size = new System.Drawing.Size(174, 50);
-            this.Name_genre.TabIndex = 2;
-            this.Name_genre.Text = "label1";
+            this.genresToolStripMenuItem1.Name = "genresToolStripMenuItem1";
+            this.genresToolStripMenuItem1.Size = new System.Drawing.Size(66, 24);
+            this.genresToolStripMenuItem1.Text = "Genres";
             // 
-            // Name_author
+            // auteurToolStripMenuItem1
             // 
-            this.Name_author.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Name_author.ForeColor = System.Drawing.Color.White;
-            this.Name_author.Location = new System.Drawing.Point(3, 68);
-            this.Name_author.Name = "Name_author";
-            this.Name_author.Size = new System.Drawing.Size(174, 50);
-            this.Name_author.TabIndex = 1;
-            this.Name_author.Text = "label1";
+            this.auteurToolStripMenuItem1.Name = "auteurToolStripMenuItem1";
+            this.auteurToolStripMenuItem1.Size = new System.Drawing.Size(65, 24);
+            this.auteurToolStripMenuItem1.Text = "Auteur";
             // 
-            // Name_book
+            // typesToolStripMenuItem1
             // 
-            this.Name_book.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Name_book.ForeColor = System.Drawing.Color.White;
-            this.Name_book.Location = new System.Drawing.Point(3, 18);
-            this.Name_book.Name = "Name_book";
-            this.Name_book.Size = new System.Drawing.Size(174, 50);
-            this.Name_book.TabIndex = 0;
-            this.Name_book.Text = "label1";
+            this.typesToolStripMenuItem1.Name = "typesToolStripMenuItem1";
+            this.typesToolStripMenuItem1.Size = new System.Drawing.Size(58, 24);
+            this.typesToolStripMenuItem1.Text = "Types";
+            // 
+            // testConnexionBDDToolStripMenuItem
+            // 
+            this.testConnexionBDDToolStripMenuItem.Name = "testConnexionBDDToolStripMenuItem";
+            this.testConnexionBDDToolStripMenuItem.Size = new System.Drawing.Size(156, 24);
+            this.testConnexionBDDToolStripMenuItem.Text = "Test Connexion BDD";
+            this.testConnexionBDDToolStripMenuItem.Click += new System.EventHandler(this.testConnexionBDDToolStripMenuItem_Click);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(15, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1106, 45);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Bienvenue sur Biblivres";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
@@ -178,27 +176,31 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1136, 529);
-            this.Controls.Add(this.Groupe_livre);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
+            this.Location = new System.Drawing.Point(15, 15);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Padding = new System.Windows.Forms.Padding(15, 0, 15, 15);
-            this.Text = "Form1";
+            this.miniToolStrip.ResumeLayout(false);
+            this.miniToolStrip.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.Groupe_livre.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
         }
 
-        private System.Windows.Forms.Label Name_book;
-        private System.Windows.Forms.Label Name_author;
-        private System.Windows.Forms.Label Name_genre;
-        private System.Windows.Forms.Label Name_types;
-        private System.Windows.Forms.Label Price;
+        private System.Windows.Forms.Label label1;
 
-        private System.Windows.Forms.GroupBox Groupe_livre;
+        private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem livresToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem genresToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem auteurToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem typesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem testConnexionBDDToolStripMenuItem;
+
+        private System.Windows.Forms.MenuStrip menuStrip1;
 
         private System.Windows.Forms.ToolStripMenuItem livresToolStripMenuItem;
 
@@ -208,7 +210,7 @@
         private System.Windows.Forms.ToolStripMenuItem genresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem auteurToolStripMenuItem;
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip miniToolStrip;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
 
         #endregion
